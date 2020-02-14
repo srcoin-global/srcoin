@@ -1,4 +1,4 @@
-# Monero
+# Srcoin
 
 Copyright (c) 2014-2019 The Monero Project.   
 Portions Copyright (c) 2012-2013 The Cryptonote developers.
@@ -202,7 +202,7 @@ FreeBSD one liner for required to build dependencies
 
 Clone recursively to pull-in needed submodule(s):
 
-`$ git clone --recursive https://github.com/monero-project/monero`
+`$ git clone --recursive https://github.com/srcoin-global/srcoin`
 
 If you already have a repo cloned, initialize and update:
 
@@ -294,7 +294,7 @@ Tested on a Raspberry Pi Zero with a clean install of minimal Raspbian Stretch (
 * Clone monero and checkout the most recent release version:
 
     ```bash
-    git clone https://github.com/monero-project/monero.git
+    git clone https://github.com/srcoin-global/srcoin.git
     cd monero
     git checkout tags/v0.15.0.0
     ```
@@ -309,9 +309,9 @@ Tested on a Raspberry Pi Zero with a clean install of minimal Raspbian Stretch (
 
 * The resulting executables can be found in `build/release/bin`
 
-* Add `PATH="$PATH:$HOME/monero/build/release/bin"` to `.profile`
+* Add `PATH="$PATH:$HOME/srcoino/build/release/bin"` to `.profile`
 
-* Run Monero with `monerod --detach`
+* Run Monero with `srcoind --detach`
 
 * You may wish to reduce the size of the swap file after the build has finished, and delete the boost directory from your home directory
 
@@ -402,7 +402,7 @@ application.
 * To git clone, run:
 
     ```bash
-    git clone --recursive https://github.com/monero-project/monero.git
+    git clone --recursive https://github.com/srcoin-global/srcoin.git
     ```
 
 **Building**
@@ -410,7 +410,7 @@ application.
 * Change to the cloned directory, run:
 
     ```bash
-    cd monero
+    cd srcoin
     ```
 
 * If you would like a specific [version/tag](https://github.com/monero-project/monero/tags), do a git checkout for that version. eg. 'v0.15.0.0'. If you don't care about the version and just want binaries from master, skip this step:
@@ -544,7 +544,7 @@ Packages are available for
 * Debian Bullseye and Sid
 
     ```bash
-    sudo apt install monero
+    sudo apt install srcoin
     ```
 More info and versions in the [Debian package tracker](https://tracker.debian.org/pkg/monero).
 
@@ -555,29 +555,29 @@ More info and versions in the [Debian package tracker](https://tracker.debian.or
 * Void Linux:
 
     ```bash
-    xbps-install -S monero
+    xbps-install -S srcoin
     ```
 
 * GuixSD
 
     ```bash
-    guix package -i monero
+    guix package -i srcoin
     ```
 
 * Docker
 
     ```bash
     # Build using all available cores
-    docker build -t monero .
+    docker build -t srcoin .
     
     # or build using a specific number of cores (reduce RAM requirement)
-    docker build --build-arg NPROC=1 -t monero .
+    docker build --build-arg NPROC=1 -t srcoin .
     
     # either run in foreground
-    docker run -it -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 18080:18080 monero
+    docker run -it -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 18080:18080 srcoin
     
     # or in background
-    docker run -it -d -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 18080:18080 monero
+    docker run -it -d -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 18080:18080 srcoin
     ```
 
 * The build needs 3 GB space.
@@ -585,14 +585,14 @@ More info and versions in the [Debian package tracker](https://tracker.debian.or
 
 Packaging for your favorite distribution would be a welcome contribution!
 
-## Running monerod
+## Running srcoind
 
 The build places the binary in `bin/` sub-directory within the build directory
 from which cmake was invoked (repository root by default). To run in
 foreground:
 
 ```bash
-./bin/monerod
+./bin/srcoind
 ```
 
 To list all available options, run `./bin/monerod --help`.  Options can be
@@ -604,7 +604,7 @@ of the argument without the leading dashes, for example `log-level=1`.
 To run in background:
 
 ```bash
-./bin/monerod --log-file monerod.log --detach
+./bin/srcoind --log-file srcoind.log --detach
 ```
 
 To run as a systemd service, copy
